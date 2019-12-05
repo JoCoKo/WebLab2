@@ -1,0 +1,13 @@
+.Middler {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.Middler span {
+    font-size: 31px;
+}
+
+.Middler input {
+    margin-right: 10px;
+}

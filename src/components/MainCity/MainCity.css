@@ -1,0 +1,44 @@
+* {
+    color: rgb(111, 130, 137);
+}
+
+.Temp span {
+    font-size: 81px !important;
+    color: rgb(124, 124, 124);
+    margin-left: 20px;
+}
+
+.Temp{
+    margin-top: 40px;
+}
+
+.MainCity {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.MainInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.MainInfo span {
+    font-size: 31px;
+    font-weight: bold;
+}
+
+.MainInfo div {
+    display: flex;
+    align-items: center;
+}
+
+
+ul li {
+    background-color: rgb(167, 175, 177);
+    color: white;
+    min-height: 38px;
+    margin-bottom: 8px;
+    min-width: 490px;
+}
