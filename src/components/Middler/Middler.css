@@ -10,4 +10,8 @@
 
 .Middler input {
     margin-right: 10px;
+    height: 30px;
+}
+.Middler button {
+    height: 40px;
 }
