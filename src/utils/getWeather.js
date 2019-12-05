@@ -1,5 +1,5 @@
-import {API_BASE} from "../const/constants";
-import transformData from "./transformData";
+import { API_BASE } from "../const/constants";
+import { transformData } from "./";
 
 const getResource = (url) => fetch(`${API_BASE}${url}`);
 

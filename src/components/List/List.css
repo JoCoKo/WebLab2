@@ -1,7 +1,13 @@
-ul li {
+.ExtraInfo li {
     background-color: rgb(167, 175, 177);
-    color: white;
     min-height: 38px;
     margin-bottom: 8px;
     min-width: 490px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.ExtraInfo li span{
+    color: white;
+    margin: 0 5px;
 }

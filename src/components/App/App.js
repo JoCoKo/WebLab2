@@ -2,8 +2,7 @@ import React, {useState, useEffect} from 'react';
 import './App.css';
 import MainCity from "../MainCity/MainCity";
 import AppHeader from "../AppHeader/AppHeader";
-import {getWeatherByCity, getWeatherByCoord} from "../../utils/getWeather";
-import getLocation from "../../utils/getCoordinates";
+import {getWeatherByCity, getWeatherByCoord, getLocation, saveToLocalStorage, getCitiesFromLocalStorage} from "../../utils";
 import Middler from "../Middler/Middler";
 import {DEFAULT_CITY} from "../../const/constants";
 import Spinner from "../Spinner/Spinner";
@@ -37,25 +36,35 @@ const App = () => {
             .catch((err) => alert(err));
     };
 
+    const deleteLoading = (arr, cityIndex) => arr.filter((city, i) => (i !== cityIndex));
+
     const addCityToState = (cityName) => {
+        const cityIndex = cities.length;
+        setCities((state) => ([...state, {isLoading: true}]));
+
         getWeatherByCity(cityName)
-            .then((data) => {
-                setCities((cities) => ([...cities, data]));
+            .then( (data) => {
+                setCities((state) => saveToLocalStorage([...deleteLoading(state, cityIndex), data]))
             })
-            .catch((err) => alert(err));
+            .catch((err) => {
+                setCities((state) => saveToLocalStorage([...deleteLoading(state, cityIndex)]));
+                alert(err)
+            });
     };
 
     useEffect(() => {
-        console.log(cities);
-    }, [cities]);
+        const ls = getCitiesFromLocalStorage();
+        if(ls) ls.map((city) => addCityToState(city));
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
 
-
+    const onDeleted = (id) => setCities((state) => saveToLocalStorage(state.filter((city, index) => index !== id)));
     return (
         <div className="App">
             <AppHeader updateCity={() => setUpToDate(true)}/>
             {weather.city ? <MainCity weather={weather}/> : <Spinner/>}
             <Middler addCity={addCityToState}/>
-            <CityList cities={cities}/>
+            <CityList cities={cities} onDeleted={onDeleted}/>
         </div>
     );
 };
