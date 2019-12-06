@@ -14,7 +14,7 @@ const SecondaryCity = ({weather, onDeleted, i}) => {
                 <div className='SecondaryInfo'>
                     <span>{city}</span>
                     <img src={image} alt=''/>
-                    <span>{temp} ℃</span>
+                    <span id='temp'>{temp} ℃</span>
                     <button onClick={() => onDeleted(i)}>X</button>
                 </div>
                 <List {...weather}/>

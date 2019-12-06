@@ -12,7 +12,7 @@ const MainCity = ({weather}) => {
                 <span>{city}</span>
                 <div className='Temp'>
                     <img src={image} alt=''/>
-                    <span>{temp} ℃</span>
+                    <span>{temp}℃</span>
                 </div>
             </div>
             <List {...weather}/>

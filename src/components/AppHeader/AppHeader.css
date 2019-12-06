@@ -1,9 +1,19 @@
 .App-header {
-
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-around;
+    justify-content: flex-start;
     font-size: calc(31px);
     color: rgb(111,130,137);
+}
+
+.App-header button{
+    margin-left: 250px;
+    background: rgb(201,210,215);
+    font-size: 13px;
+    color: inherit;
+    text-decoration: none;
+    height: 53px;
+    border-radius: 10px;
+    width: 260px;
 }

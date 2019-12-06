@@ -16,7 +16,7 @@ const Middler = ({addCity}) => {
             <span>Избранное</span>
             <form>
                 <input placeholder='Добавить новый город' value={text} onChange={handleChange}/>
-                <button onClick={click}>X</button>
+                <button onClick={click}>┿</button>
             </form>
         </div>
     );

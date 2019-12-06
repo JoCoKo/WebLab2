@@ -1,8 +1,8 @@
 .ExtraInfo li {
     background-color: rgb(167, 175, 177);
-    min-height: 38px;
+    height: 38px;
     margin-bottom: 8px;
-    min-width: 490px;
+    width: 490px;
     display: flex;
     justify-content: space-between;
 }
@@ -10,4 +10,11 @@
 .ExtraInfo li span{
     color: white;
     margin: 0 5px;
+    padding-top: 6px;
+}
+
+.ExtraInfo{
+    width: fit-content;
+    margin-block-end: 0;
+    margin-block-start: 0;
 }

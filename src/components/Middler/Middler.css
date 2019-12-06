@@ -1,7 +1,9 @@
 .Middler {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 .Middler span {
@@ -9,9 +11,11 @@
 }
 
 .Middler input {
-    margin-right: 10px;
-    height: 30px;
-}
-.Middler button {
+    margin-right: 17px;
     height: 40px;
+    width: 350px;
+    background-color: rgb(241,241,241);
+    border-width: 0;
+    outline:none;
+    padding-left: 10px;
 }
