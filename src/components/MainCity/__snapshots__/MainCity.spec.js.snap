@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MainCity в состоянии загрузки отображается корректно 1`] = `
+<div
+  className="MainCity"
+>
+  <Spinner />
+</div>
+`;
+
+exports[`MainCity в состоянии ошибки отображается корректно 1`] = `
+<div
+  className="MainCity"
+>
+  АШЫПКА!!
+</div>
+`;
+
+exports[`MainCity в состоянии штатного отображения данных отображается корректно 1`] = `
+<div
+  className="MainCity"
+>
+  <div
+    className="MainInfo"
+  >
+    <span>
+      Ufa
+    </span>
+    <div
+      className="Temp"
+    >
+      <img
+        alt=""
+        src="http://openweathermap.org/img/wn/04n@2x.png"
+      />
+      <span>
+        -6
+        ℃
+      </span>
+    </div>
+  </div>
+  <List
+    city="Ufa"
+    error={null}
+    image="http://openweathermap.org/img/wn/04n@2x.png"
+    temp="-6"
+  />
+</div>
+`;

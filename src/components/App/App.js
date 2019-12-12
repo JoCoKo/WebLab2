@@ -14,7 +14,7 @@ import CityList from "../CityList/CityList";
 import { connect } from "react-redux";
 import * as actions from "../../actions"
 
-const App = (props) => {
+export const App = (props) => {
     const {mainCityRequest, mainCitySuccess, mainCityError, cityRequest, citySuccess, cityError, cityDelete, weather, cities} = props;
 
     const updateMainCity = () => {

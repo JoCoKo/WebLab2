@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Middler отображается корректно 1`] = `
+<div
+  className="Middler"
+>
+  <span>
+    Избранное
+  </span>
+  <form>
+    <input
+      onChange={[Function]}
+      placeholder="Добавить новый город"
+      value=""
+    />
+    <button
+      onClick={[Function]}
+    >
+      ┿
+    </button>
+  </form>
+</div>
+`;

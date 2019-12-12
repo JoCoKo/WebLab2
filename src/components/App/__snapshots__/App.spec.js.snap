@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App отображается корректно 1`] = `
+<div
+  className="App"
+>
+  <AppHeader
+    updateCity={[Function]}
+  />
+  <MainCity
+    weather={
+      Object {
+        "city": "Ufa",
+        "cloudiness": "overcast clouds",
+        "coordinates": "54.73,55.95",
+        "error": null,
+        "humidity": 85,
+        "image": "http://openweathermap.org/img/wn/04n@2x.png",
+        "pressure": 1026,
+        "temp": "-6",
+        "wind": 3,
+      }
+    }
+  />
+  <Middler
+    addCity={[Function]}
+  />
+  <CityList
+    cities={
+      Array [
+        Object {
+          "city": "Ufa",
+          "cloudiness": "overcast clouds",
+          "coordinates": "54.73,55.95",
+          "humidity": 85,
+          "id": 479561,
+          "image": "http://openweathermap.org/img/wn/04n@2x.png",
+          "pressure": 1026,
+          "temp": "-6",
+          "wind": 3,
+        },
+        Object {
+          "city": "Ufa",
+          "cloudiness": "overcast clouds",
+          "coordinates": "54.73,55.95",
+          "humidity": 85,
+          "id": 479561,
+          "image": "http://openweathermap.org/img/wn/04n@2x.png",
+          "pressure": 1026,
+          "temp": "-6",
+          "wind": 3,
+        },
+        Object {
+          "city": "Ufa",
+          "cloudiness": "overcast clouds",
+          "coordinates": "54.73,55.95",
+          "humidity": 85,
+          "id": 479561,
+          "image": "http://openweathermap.org/img/wn/04n@2x.png",
+          "pressure": 1026,
+          "temp": "-6",
+          "wind": 3,
+        },
+      ]
+    }
+    onDeleted={[Function]}
+  />
+</div>
+`;

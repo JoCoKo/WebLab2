@@ -4,6 +4,9 @@
   "private": true,
   "homepage": "https://jocoko.github.io/WebLab2/",
   "dependencies": {
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.15.1",
+    "enzyme-to-json": "^3.4.3",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
     "react-redux": "^7.1.3",

@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SecondaryCity в состоянии загрузки отображается корректно 1`] = `
+<div
+  className="SecondaryCity"
+>
+  <Spinner />
+</div>
+`;
+
+exports[`SecondaryCity в состоянии штатного отображения отображается корректно 1`] = `
+<div
+  className="SecondaryCity"
+>
+  <div
+    className="SecondaryInfo"
+  >
+    <span>
+      Ufa
+    </span>
+    <img
+      alt=""
+      src="http://openweathermap.org/img/wn/04n@2x.png"
+    />
+    <span
+      id="temp"
+    >
+      -6
+       ℃
+    </span>
+    <button
+      onClick={[Function]}
+    >
+      X
+    </button>
+  </div>
+  <List
+    city="Ufa"
+    image="http://openweathermap.org/img/wn/04n@2x.png"
+    isLoading={null}
+    temp="-6"
+  />
+</div>
+`;

@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CityList с заполненым массивом городов отображается корректно 1`] = `
+<div
+  className="CityList"
+>
+  <SecondaryCity
+    i={0}
+    key="city-0"
+    onDeleted={[Function]}
+    weather={
+      Object {
+        "city": "Ufa",
+        "cloudiness": "overcast clouds",
+        "coordinates": "54.73,55.95",
+        "humidity": 85,
+        "id": 479561,
+        "image": "http://openweathermap.org/img/wn/04n@2x.png",
+        "pressure": 1026,
+        "temp": "-6",
+        "wind": 3,
+      }
+    }
+  />
+  <SecondaryCity
+    i={1}
+    key="city-1"
+    onDeleted={[Function]}
+    weather={
+      Object {
+        "city": "Ufa",
+        "cloudiness": "overcast clouds",
+        "coordinates": "54.73,55.95",
+        "humidity": 85,
+        "id": 479561,
+        "image": "http://openweathermap.org/img/wn/04n@2x.png",
+        "pressure": 1026,
+        "temp": "-6",
+        "wind": 3,
+      }
+    }
+  />
+  <SecondaryCity
+    i={2}
+    key="city-2"
+    onDeleted={[Function]}
+    weather={
+      Object {
+        "city": "Ufa",
+        "cloudiness": "overcast clouds",
+        "coordinates": "54.73,55.95",
+        "humidity": 85,
+        "id": 479561,
+        "image": "http://openweathermap.org/img/wn/04n@2x.png",
+        "pressure": 1026,
+        "temp": "-6",
+        "wind": 3,
+      }
+    }
+  />
+</div>
+`;
+
+exports[`CityList с пустым массивом городов отображается корректно 1`] = `
+<div
+  className="CityList"
+/>
+`;

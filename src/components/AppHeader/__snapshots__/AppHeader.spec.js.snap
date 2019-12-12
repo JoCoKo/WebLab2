@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AppHeader отображается корректно 1`] = `
+<header
+  className="App-header"
+>
+  <p>
+    Погода здесь
+  </p>
+  <button
+    onClick={[Function]}
+  >
+    Обновить геолокацию
+  </button>
+</header>
+`;

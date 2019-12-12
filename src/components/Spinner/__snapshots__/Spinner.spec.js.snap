@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Spinner отображается корректно 1`] = `
+<div
+  className="loadingio-spinner-dual-ring-aqgdafl8n7"
+>
+  <div
+    className="ldio-n77olvnu3sn"
+  >
+    <div />
+    <div>
+      <div />
+    </div>
+  </div>
+</div>
+`;

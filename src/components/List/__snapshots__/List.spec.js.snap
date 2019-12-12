@@ -1,0 +1,99 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`List с null в качестве данных отображается корректно 1`] = `
+<ul
+  className="ExtraInfo"
+>
+  <li>
+    <span>
+      Ветер
+    </span>
+    <span>
+       m/s
+    </span>
+  </li>
+  <li>
+    <span>
+      Облачность
+    </span>
+    <span />
+  </li>
+  <li>
+    <span>
+      Давление
+    </span>
+    <span>
+       hpa
+    </span>
+  </li>
+  <li>
+    <span>
+      Влажность
+    </span>
+    <span>
+       %
+    </span>
+  </li>
+  <li>
+    <span>
+      Координаты:
+    </span>
+    <span>
+      [
+      ]
+    </span>
+  </li>
+</ul>
+`;
+
+exports[`List с заполненым массивом данных отображается корректно 1`] = `
+<ul
+  className="ExtraInfo"
+>
+  <li>
+    <span>
+      Ветер
+    </span>
+    <span>
+      3
+       m/s
+    </span>
+  </li>
+  <li>
+    <span>
+      Облачность
+    </span>
+    <span>
+      overcast clouds
+    </span>
+  </li>
+  <li>
+    <span>
+      Давление
+    </span>
+    <span>
+      1026
+       hpa
+    </span>
+  </li>
+  <li>
+    <span>
+      Влажность
+    </span>
+    <span>
+      85
+       %
+    </span>
+  </li>
+  <li>
+    <span>
+      Координаты:
+    </span>
+    <span>
+      [
+      54.73,55.95
+      ]
+    </span>
+  </li>
+</ul>
+`;
