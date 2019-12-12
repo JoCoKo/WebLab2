@@ -1,6 +1,8 @@
 const saveToLocalStorage = (cities) => {
-    const citiesList = cities.map(( city ) => (city.city));
-    localStorage.setItem('state', JSON.stringify({cities: citiesList}));
+    if(cities instanceof Array) {
+        const citiesList = cities.filter((city) => (city.city)).map(( city ) => (city.city));
+        localStorage.setItem('state', JSON.stringify({cities: citiesList}));
+    }
     return cities;
 };
 

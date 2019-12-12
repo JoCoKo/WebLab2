@@ -5,7 +5,7 @@ const AppHeader = ({updateCity}) => {
     return (
         <header className="App-header">
             <p>Погода здесь</p>
-            <button onClick={updateCity}>
+            <button onClick={() => updateCity()}>
                 Обновить геолокацию
             </button>
         </header>
