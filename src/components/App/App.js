@@ -51,15 +51,26 @@ const App = () => {
     };
 
     const addCityToState = (cityName) => {
-        setCities((state) => ([...state, {isLoading: true}]));
-        getWeatherByCity(cityName)
-            .then((data) => {
-                setCities((state) => saveToLocalStorage([...deleteLoading(state, data)]));
-            })
-            .catch((err) => {
-                setCities((state) => saveToLocalStorage([...deleteLoading(state)]));
-                alert(err)
-            });
+        let neededToBeSet = false;
+        //проверка на добавление уже существующего города в избранное
+        cities.forEach((city) => {
+            if (city.city && city.city.toLocaleLowerCase() !== cityName.toLowerCase())
+                neededToBeSet = true;
+            else
+                alert('Already on the list');
+        });
+        if (cities.length === 0 || neededToBeSet) {
+            setCities((state) => ([...state, {isLoading: true}]));
+            getWeatherByCity(cityName)
+                .then((data) => {
+                    setCities((state) => saveToLocalStorage([...deleteLoading(state, data)]));
+                })
+                .catch((err) => {
+                    setCities((state) => saveToLocalStorage([...deleteLoading(state)]));
+                    alert(err)
+                });
+        }
+
     };
 
     useEffect(() => {
