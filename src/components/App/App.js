@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, { useEffect } from 'react';
 import './App.css';
 import MainCity from "../MainCity/MainCity";
 import AppHeader from "../AppHeader/AppHeader";
@@ -6,20 +6,19 @@ import {
     getWeatherByCity,
     getWeatherByCoord,
     getLocation,
-    saveToLocalStorage,
     getCitiesFromLocalStorage
 } from "../../utils";
 import Middler from "../Middler/Middler";
-import {DEFAULT_CITY} from "../../const/constants";
-import Spinner from "../Spinner/Spinner";
+import { DEFAULT_CITY } from "../../const/constants";
 import CityList from "../CityList/CityList";
+import { connect } from "react-redux";
+import * as actions from "../../actions"
 
-const App = () => {
-    const [weather, setWeather] = useState({});
-    const [cities, setCities] = useState([]);
+const App = (props) => {
+    const {mainCityRequest, mainCitySuccess, mainCityError, cityRequest, citySuccess, cityError, cityDelete, weather, cities} = props;
 
     const updateMainCity = () => {
-        setWeather({});
+        mainCityRequest();
         getLocation(successGeoCallback, errorGeoCallback);
     };
 
@@ -28,49 +27,44 @@ const App = () => {
         const lat = pos.coords.latitude;
         const lon = pos.coords.longitude;
         getWeatherByCoord(lat, lon)
-            .then((data) => setWeather(data))
-            .catch((err) => alert(err));
+            .then((data) => mainCitySuccess(data))
+            .catch((err) => mainCityError(err));
     };
 
     const errorGeoCallback = () => {
         getWeatherByCity(DEFAULT_CITY)
-            .then((data) => setWeather(data))
-            .catch((err) => alert(err));
+            .then((data) => mainCitySuccess(data))
+            .catch((err) => mainCityError(err));
     };
 
-    const deleteLoading = (arr, data) => {
-        let firstLoadingObj = arr.length - 1;
-        arr.filter((el) => (el)).forEach((el, index) => {
-            if (el.isLoading && index < firstLoadingObj) firstLoadingObj = index;
-        });
-        if (data)
-            arr[firstLoadingObj] = data;
-        else
-            arr.pop();
-        return arr;
-    };
-
-    const addCityToState = (cityName) => {
-        let neededToBeSet = false;
+    const canInsert = (cityName) => {
+        let flag = true;
         //проверка на добавление уже существующего города в избранное
+        if (cities.length === 0) return true;
         cities.forEach((city) => {
             if (city.city && city.city.toLocaleLowerCase() !== cityName.toLowerCase())
-                neededToBeSet = true;
-            else
+                flag &= true;
+            else {
                 alert('Already on the list');
+                flag &= false;
+            }
         });
-        if (cities.length === 0 || neededToBeSet) {
-            setCities((state) => ([...state, {isLoading: true}]));
+        return flag;
+    };
+
+
+    const addCityToState = (cityName) => {
+        if (canInsert(cityName)) {
+            cityRequest();
             getWeatherByCity(cityName)
                 .then((data) => {
-                    setCities((state) => saveToLocalStorage([...deleteLoading(state, data)]));
+                    citySuccess(data);
                 })
                 .catch((err) => {
-                    setCities((state) => saveToLocalStorage([...deleteLoading(state)]));
+                    cityError();
                     alert(err)
                 });
         }
-
     };
 
     useEffect(() => {
@@ -80,16 +74,17 @@ const App = () => {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
-    const onDeleted = (id) => setCities((state) => saveToLocalStorage(state.filter((city, index) => index !== id)));
 
     return (
         <div className="App">
             <AppHeader updateCity={updateMainCity}/>
-            {weather.city ? <MainCity weather={weather}/> : <Spinner/>}
+            <MainCity weather={weather}/>
             <Middler addCity={addCityToState}/>
-            <CityList cities={cities} onDeleted={onDeleted}/>
+            <CityList cities={cities} onDeleted={cityDelete}/>
         </div>
     );
 };
 
-export default App;
+const mapStateToProps = ({weather, cities}) => ({weather, cities});
+
+export default connect(mapStateToProps, actions)(App);
