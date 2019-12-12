@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/WebLab2/static/css/main.98984755.chunk.css",
+    "main.js": "/WebLab2/static/js/main.95d0dc23.chunk.js",
+    "main.js.map": "/WebLab2/static/js/main.95d0dc23.chunk.js.map",
+    "runtime-main.js": "/WebLab2/static/js/runtime-main.e46450e8.js",
+    "runtime-main.js.map": "/WebLab2/static/js/runtime-main.e46450e8.js.map",
+    "static/js/2.8670cfa3.chunk.js": "/WebLab2/static/js/2.8670cfa3.chunk.js",
+    "static/js/2.8670cfa3.chunk.js.map": "/WebLab2/static/js/2.8670cfa3.chunk.js.map",
+    "index.html": "/WebLab2/index.html",
+    "precache-manifest.5e2379cd9a3e73748e6628127abcd5d3.js": "/WebLab2/precache-manifest.5e2379cd9a3e73748e6628127abcd5d3.js",
+    "service-worker.js": "/WebLab2/service-worker.js",
+    "static/css/main.98984755.chunk.css.map": "/WebLab2/static/css/main.98984755.chunk.css.map"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e46450e8.js",
+    "static/js/2.8670cfa3.chunk.js",
+    "static/css/main.98984755.chunk.css",
+    "static/js/main.95d0dc23.chunk.js"
+  ]
+}
