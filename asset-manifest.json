@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/WebLab2/static/css/main.36fb2f27.chunk.css",
-    "main.js": "/WebLab2/static/js/main.6ddbd549.chunk.js",
-    "main.js.map": "/WebLab2/static/js/main.6ddbd549.chunk.js.map",
+    "main.js": "/WebLab2/static/js/main.d67410b2.chunk.js",
+    "main.js.map": "/WebLab2/static/js/main.d67410b2.chunk.js.map",
     "runtime-main.js": "/WebLab2/static/js/runtime-main.e46450e8.js",
     "runtime-main.js.map": "/WebLab2/static/js/runtime-main.e46450e8.js.map",
     "static/js/2.8670cfa3.chunk.js": "/WebLab2/static/js/2.8670cfa3.chunk.js",
     "static/js/2.8670cfa3.chunk.js.map": "/WebLab2/static/js/2.8670cfa3.chunk.js.map",
     "index.html": "/WebLab2/index.html",
-    "precache-manifest.2545ea83b116eac1805f1b1baea95548.js": "/WebLab2/precache-manifest.2545ea83b116eac1805f1b1baea95548.js",
+    "precache-manifest.f67d0a00a81138f5e4ee2c02a88357d1.js": "/WebLab2/precache-manifest.f67d0a00a81138f5e4ee2c02a88357d1.js",
     "service-worker.js": "/WebLab2/service-worker.js",
     "static/css/main.36fb2f27.chunk.css.map": "/WebLab2/static/css/main.36fb2f27.chunk.css.map"
   },
@@ -16,6 +16,6 @@
     "static/js/runtime-main.e46450e8.js",
     "static/js/2.8670cfa3.chunk.js",
     "static/css/main.36fb2f27.chunk.css",
-    "static/js/main.6ddbd549.chunk.js"
+    "static/js/main.d67410b2.chunk.js"
   ]
 }
