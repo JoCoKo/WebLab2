@@ -5,14 +5,14 @@ import AppHeader from "../AppHeader/AppHeader";
 import {
     getWeatherByCity,
     getWeatherByCoord,
-    getLocation,
-    getCitiesFromLocalStorage
+    getLocation
 } from "../../utils";
 import Middler from "../Middler/Middler";
 import { DEFAULT_CITY } from "../../const/constants";
 import CityList from "../CityList/CityList";
 import { connect } from "react-redux";
 import * as actions from "../../actions"
+import {addFavorite, getFavorites} from "../../utils/getWeather";
 
 export const App = (props) => {
     const {mainCityRequest, mainCitySuccess, mainCityError, cityRequest, citySuccess, cityError, cityDelete, weather, cities} = props;
@@ -57,7 +57,8 @@ export const App = (props) => {
         if (canInsert(cityName)) {
             cityRequest();
             getWeatherByCity(cityName)
-                .then((data) => {
+                .then(async (data) => {
+                    data.id = (await addFavorite(data.city))._id;
                     citySuccess(data);
                 })
                 .catch((err) => {
@@ -68,8 +69,8 @@ export const App = (props) => {
     };
 
     useEffect(() => {
-        const ls = getCitiesFromLocalStorage();
-        if (ls) ls.map((city) => addCityToState(city));
+        const ls = getFavorites();
+        ls.then(data => data.map((city) => addCityToState(city)));
         updateMainCity();
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);

@@ -1,4 +1,5 @@
 import {saveToLocalStorage} from "./utils";
+import {deleteFavorite} from "./utils/getWeather";
 
 const initialStore = {
     weather: {},
@@ -53,11 +54,13 @@ const reducer = (store = initialStore, action) => {
                 cities: citiesCopy
             };
         }
-        case 'CITY_DELETE':
+        case 'CITY_DELETE':{
+            (async () => deleteFavorite(store.cities[action.index].id))();
             return {
                 ...store,
                 cities:  saveToLocalStorage(store.cities.filter((city, index) => index !== action.index))
             };
+        }
         default:
             return store;
     }
