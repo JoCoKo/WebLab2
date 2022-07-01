@@ -1,6 +1,6 @@
 export const DEFAULT_CITY = 'Moscow';
 export const DEFAULT_CITY2 = 'Saint Petersburg';
-const API_KEY = 'b1db78919ab09f5c992f21e3c26b367c';
+const API_KEY = '9c7c2f1159d3266db4a0903ef7531264';
 export const API_BASE = `https://api.openweathermap.org/data/2.5/weather?appid=${API_KEY}&`;
 
 
